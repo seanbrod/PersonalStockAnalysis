@@ -1,10 +1,10 @@
 # Personal Stock/Investment Analysis Application
 
-## GOAL
+## Goal
 
 Track a select few stocks and news/finacial reports. Take in the data from these stocks and perform various analyses on these stocks for trends and future predictions. 
 
-## ARCHITECTURE 
+## Architecture 
 
 ```
  ┌───────────────┐
