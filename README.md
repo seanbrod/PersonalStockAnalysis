@@ -6,6 +6,7 @@ Track a select few stocks and news/finacial reports. Take in the data from these
 
 ## ARCHITECTURE 
 
+bash```
  ┌───────────────┐
  │ Stock API     │
  │ (AlphaVantage │
@@ -59,3 +60,4 @@ Track a select few stocks and news/finacial reports. Take in the data from these
          │ Push scraped news/reports
          ▼
      Kafka / Postgres
+```
