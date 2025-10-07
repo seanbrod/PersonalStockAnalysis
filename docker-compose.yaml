@@ -1,0 +1,30 @@
+#Sean Broderick
+version: "3.8"
+services:
+
+#postgres docker
+  db: 
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always 
+    environment:
+      POSTGRES_USER: pg_usr 
+      POSTGRES_PASSWORD: pg_pw
+      POSTGRES_DB: pg_db
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data 
+
+#frontend interface for postgres db
+  adminer: 
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
+

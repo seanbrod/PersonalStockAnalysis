@@ -61,3 +61,8 @@ Track a select few stocks and news/finacial reports. Take in the data from these
          ▼
      Kafka / Postgres
 ```
+
+
+## Resources
+
+- Yahoo Finance API (yfinance) - https://ranaroussi.github.io/yfinance/reference/index.html 
