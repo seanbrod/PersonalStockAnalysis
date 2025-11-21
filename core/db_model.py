@@ -7,7 +7,7 @@ class LiveStockData(Base):
 
     id = Column(String(55), primary_key=True, nullable=False)
     price = Column(Numeric(precision=10, scale=2), primary_key=False, nullable=False)
-    time = Column(Integer, primary_key=False, nullable=False)
+    time = Column(Numeric(precision=15, scale=0), primary_key=False, nullable=False)
     date = Column(DateTime, primary_key=True, nullable=False)
     exchange = Column(String(55), primary_key=False, nullable=False)
     quote_type = Column(Integer, primary_key=False, nullable=False)
@@ -21,7 +21,7 @@ class LiveFundData(Base):
 
     id = Column(String(55), primary_key=True, nullable=False)
     price = Column(Numeric(precision=10, scale=2), primary_key=False, nullable=False)
-    time = Column(Integer, primary_key=False, nullable=False)
+    time = Column(Numeric(precision=15, scale=0), primary_key=False, nullable=False)
     date = Column(DateTime, primary_key=True, nullable=False)
     exchange = Column(String(55), primary_key=False, nullable=False)
     quote_type = Column(Integer, primary_key=False, nullable=False)
@@ -34,6 +34,7 @@ class LiveFundData(Base):
 class HistoricalStockData(Base):
     __tablename__ = "historical_stock_data"  
 
+    id = Column(String(55), primary_key=True, nullable=False)
     date = Column(DateTime, primary_key=True, nullable=False)
     open = Column(Numeric(precision=15, scale=5), primary_key=False, nullable=False)
     high = Column(Numeric(precision=15, scale=5), primary_key=False, nullable=False)
@@ -46,6 +47,7 @@ class HistoricalStockData(Base):
 class HistoricalFundData(Base):
     __tablename__ = "historical_fund_data"  
 
+    id = Column(String(55), primary_key=True, nullable=False)
     date = Column(DateTime, primary_key=True, nullable=False)
     open = Column(Numeric(precision=15, scale=5), primary_key=False, nullable=False)
     high = Column(Numeric(precision=15, scale=5), primary_key=False, nullable=False)

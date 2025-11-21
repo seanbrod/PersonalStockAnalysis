@@ -1,4 +1,5 @@
 yfinance==0.2.66
 SQLAlchemy==2.0.43
+SQLAlchemy-Utils==0.42.0
 psycopg2-binary==2.9.10
 python-dotenv==1.1.1
