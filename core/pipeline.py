@@ -3,14 +3,17 @@ from typing import Any
 from datetime import datetime
 from connection import Base, SessionLocal, engine
 from db_model import *
+from config import log
 
 class DBpipeline():
 
     def start(self):
+        log.info(f'start - DB session started')
         Base.metadata.create_all(engine) #technically only want to do once but overhead not too concerning
         self.session = SessionLocal()
     
     def end(self):
+        log.info(f'end - DB session closed')
         self.session.close()
 
     #injest the live STOCK data
@@ -34,6 +37,7 @@ class DBpipeline():
             self.session.commit()
         except Exception as e:
             self.session.rollback()
+            log.exception(f'injest_live_sd - Data ingesting exception: {e}')
             raise e
     
     #injest the live FUND data
@@ -56,4 +60,5 @@ class DBpipeline():
             self.session.commit()
         except Exception as e:
             self.session.rollback()
+            log.exception(f'injest_live_sd - Data ingesting exception: {e}')
             raise e

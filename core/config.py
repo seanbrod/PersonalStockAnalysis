@@ -1,9 +1,15 @@
 #Sean Broderick
 import json
 import os
+import logging
 from dotenv import load_dotenv
 
 load_dotenv()
+
+#Log File
+log_file = "app.log"
+log = logging.getLogger(__name__)
+logging.basicConfig(filename=log_file, encoding='utf-8', level=logging.DEBUG)
 
 #Producer
 s_set = {"PLTR", "RTX", "META", "GOOGL"}
